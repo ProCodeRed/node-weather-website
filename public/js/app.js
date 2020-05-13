@@ -12,7 +12,7 @@ console.log('client side js is running');
 //             console.log(data.forecast)
 //         }
 //     })
-// }) // fetch api used
+// }) // fetch api used this is how it is used
 
 const weatherForm = document.querySelector('form');
 const search = document.querySelector('input');
