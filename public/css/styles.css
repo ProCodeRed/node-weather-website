@@ -1,56 +1,65 @@
-body {
-    color: #333333;
-    font-family: arial;
-    max-width: 650px;
-    margin: 0 auto;
-    padding: 0 16px;
-
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh
-}
-
-.main-content {
-    flex-grow: 1;
-}
-
-footer {
-    color: #888888;
-    border-top: 1px solid #eeeeee;
-    margin-top: 16px;
-    padding: 16px 0;
-}
-
 header {
-    margin-top: 16px;
-    margin-bottom: 48px;
+    position: relative;
+    background-color: transparent;
+    height: 50vh;
+    min-height: 25rem;
+    width: 100%;
+    overflow: hidden;
 }
 
-h1 {
-    font-size: 64px;
-    margin-bottom: 16px;
+video {
+    position: absolute;
+    /* top: 50%; */
+    left: 50%;
+    min-width: 100vw;
+    min-height: 100vh;
+    width: auto;
+    height: auto;
+    z-index: 0;
+    -ms-transform: translateX(-50%) translateY(-50%);
+    -moz-transform: translateX(-50%) translateY(-50%);
+    -webkit-transform: translateX(-50%) translateY(-50%);
+    transform: translateX(-50%) translateY(-50%);
 }
 
-header a {
-    color: #888888;
-    margin-right: 16px;
-    text-decoration: none;
+header .container {
+    position: relative;
+    z-index: 1;
 }
 
-.portrait {
-    width: 250px;
+header .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: black;
+    opacity: 0.5;
+    z-index: 1;
+}
+
+@media (pointer: coarse) and (hover: none) {
+    header {
+    background: url('https://source.unsplash.com/XT5OInaElMw/1600x900') black no-repeat center center scroll;
+    }
+    header video {
+    display: none;
+    }
 }
 
 
-input{
-    border: 1px solid #ccc;
-    padding: 10px;
+/* .......................main body content css..........................  */
+
+.main-content{
+    position: relative;
+    z-index: 1;
+    min-height: 100vh;
 }
 
-button{
-    cursor: pointer;
-    border: 1px solid #888;
-    background-color: #888;
-    color: #fff;
-    padding: 10px;
+
+
+/* -----------------------------footer css------------------------ */
+footer{
+    position: relative;
+    z-index: 1;
 }

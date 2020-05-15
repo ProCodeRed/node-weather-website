@@ -21,7 +21,7 @@ hbs.registerPartials(partialsPath);
 // setup static dir to serve
 app.get('', (req, res) => {
     res.render('index', {
-        title: 'Weather',
+        title: 'Weather forecast',
         name: 'Vipin Yadav'
     });
 })
