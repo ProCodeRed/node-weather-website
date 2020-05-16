@@ -1,7 +1,7 @@
 const request = require('request');
 
 const forecast = (lat, lon, callback) => {
-    const url = 'https://api.openweathermap.org/data/2.5/onecall?lat=' + lat + '&lon=' + lon + '&units=metric&APPID=43ad8a118ccc5c4639086792185f388d';
+    const url = 'http://api.openweathermap.org/data/2.5/weather?lat=' + lat + '&lon=' + lon + '&units=metric&APPID=43ad8a118ccc5c4639086792185f388d';
 
     request({url, json: true}, (error, { body }) => {
         if(error) {
@@ -9,22 +9,24 @@ const forecast = (lat, lon, callback) => {
         } else if(body.message){
             callback('Unable to find Given Location', undefined);
         }else {
-            const humidity = body.current.humidity
-            const weather = body.current.weather[0].description;
-            const temp = body.current.temp;
-            const windDir = body.current.wind_deg;
-
-            callback(undefined, "There will be " + " " + weather + ' ' + "and temperature is " + " " + temp +" degrees Celsius (°C) with humidity is " + humidity + "%.");
-
-            callback(undefined, [
-                humidity, temp, windDir
-            ])
-
+            callback(undefined, {
+                cityName: body.name,
+                temperature: body.main.temp,
+                description : body.weather[0].description,
+                weatherIcon: body.weather[0].icon,
+                feeltemp: body.main.feels_like,
+                pressure: body.main.pressure,
+                humidity: body.main.humidity,
+                windSpeed: body.wind.speed,
+                windDir: body.wind.deg,
+                sunRise: body.sys.sunrise,
+                sunSet: body.sys.sunset,
+                weatherId: body.weather[0].id
+            })
             
         }
     })// desturcturing used here
 }
-
 
 
 module.exports = forecast;

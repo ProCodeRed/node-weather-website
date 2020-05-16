@@ -59,17 +59,27 @@ app.get('/weather', (req, res) => {
             })
         }
 
-        forecast(latitude, longitude, (err, forecastData) => {
+        forecast(latitude, longitude, (err, {cityName, temperature, description, weatherIcon, feeltemp, pressure, humidity, windSpeed, windDir, sunRise, sunSet, weatherId }) => {
             if(err) {
                 return res.send({
                     error: err
                 })
             }
-
             res.send({
-                forecast: forecastData,
                 location: location,
-                address: req.query.address
+                address: req.query.address,
+                cityName: cityName,
+                temperature: temperature,
+                description: description,
+                weatherIcon: weatherIcon,
+                feeltemp : feeltemp,
+                pressure : pressure,
+                humidity : humidity,
+                windSpeed: windSpeed,
+                windDir : windDir,
+                sunRise : sunRise,
+                sunSet : sunSet,
+                weatherId: weatherId
             })
         })
 
