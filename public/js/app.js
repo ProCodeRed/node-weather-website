@@ -51,6 +51,7 @@ cardBody.style.display = "none";
 
 
 
+
 weatherForm.addEventListener('submit', (e) => {
     e.preventDefault(); //stop refresh page
 
@@ -88,24 +89,85 @@ weatherForm.addEventListener('submit', (e) => {
                         cardBody.style.display = "block";
 
                         country.textContent = data.countryname;
-                        timeZone.textContent = data.timeZone;
+                        timeZone.textContent = data.timeZone; 
+                        // console.log(new Date().toString().match(/([A-Z]+[\+-][0-9]+)/)[1]);
+                        
                         cityName.textContent = data.cityName;
                         coordinates.textContent = "lat : " + data.latitude + ", " + "lon : " + data.longitude;
-                        sunRise.textContent = data.sunRise,
-                        sunSet.textContent = data.sunSet,
-                        dataRecievedAt.textContent = data.dataRecieve,
-                        seaLevel.textContent = data.seaLevel,
-                        groundLevel.textContent = data.groundLevel
+
+
+
+
+                        // sunrise data conversion from unix to nomal 
+                        const riseMilliseconds = data.sunRise * 1000 ;
+                        const dateObjectOne = new Date(riseMilliseconds);
+                        const finalDataSinRize = dateObjectOne.toLocaleString("en-IN", {hour: "numeric", minute: "numeric", second: "numeric"});
+                        sunRise.textContent = finalDataSinRize;
+
+
+                        // sunSet data conversion from unix to nomal 
+                        const setMilliseconds = data.sunSet * 1000 ;
+                        const dateObjectThree = new Date(setMilliseconds);
+                        const finalDataSet = dateObjectThree.toLocaleString("en-IN", {hour: "numeric", minute: "numeric", second: "numeric"});
+                        sunSet.textContent = finalDataSet;
+                        
+                        // changing data form UNIX format to normal format
+                        const milliseconds = data.dataRecieve * 1000 ;
+                        const dateObjectTwo = new Date(milliseconds);
+                        const finalDataDataRecieve = dateObjectTwo.toLocaleString("en-IN", {timeZoneName: "short"});
+                        dataRecievedAt.textContent = finalDataDataRecieve;
+
+
+                        seaLevel.textContent = data.seaLevel + "hPa";
+                        groundLevel.textContent = data.groundLevel + "hPa";
 
 
                         WeatherDescriptions[0].textContent = data.description;
                         WeatherDescriptions[1].src = "http://openweathermap.org/img/w/" + data.weatherIcon + ".png";
                         bTemperature.textContent = data.temperature + "°C";
                         tempFeelLike.textContent =data.feeltemp + "°C";
-                        pressure.textContent = data.pressure;
+                        pressure.textContent = data.pressure + "hPa";
                         humidity.textContent = data.humidity + "%";
-                        windSpeed.textContent = data.windSpeed;
-                        windDir.textContent = data.windDir;
+                        windSpeed.textContent = data.windSpeed + "m/sec";
+
+                        // wind direction config
+                        windDir.textContent = ((i) => {
+                            if(i >= 349 && i <= 11){
+                                    return +i + "° ↑ N";
+                            } else if (i >= 12 && i <= 33) {
+                                    return +i + "° -=- NNE";
+                            } else if (i >= 34 && i <= 56) {
+                                    return +i + "° ↗ NE";
+                            } else if (i >= 57 && i <= 78) {
+                                    return +i + "° -=- ENE";
+                            } else if (i >= 79 && i <= 101) {
+                                    return +i + "° → E";
+                            } else if (i >= 102 && i <= 123) {
+                                    return +i + "° -=- ESE";
+                            } else if (i >= 124 && i <= 146) {
+                                    return +i + "° ↘ SE";
+                            } else if (i >= 147 && i <= 168) {
+                                    return +i + "° -=- SSE";
+                            } else if (i >= 169 && i <= 191) {
+                                    return +i + "° ↓ S";
+                            } else if (i >= 192 && i <= 213) {
+                                    return +i + "° -=- SSW";
+                            } else if (i >= 214 && i <= 236) {
+                                    return +i + "° ↙ SW";
+                            } else if (i >= 237 && i <= 258) {
+                                    return +i + "° -=- WSW";
+                            } else if (i >= 259 && i <= 281) {
+                                    return +i + "° ← W";
+                            } else if (i >= 282 && i <= 303) {
+                                    return +i + "° -=- WNW";
+                            } else if (i >= 304 && i <= 326) {
+                                    return +i + "° ↖ NW";
+                            } else if (i >= 327 && i <= 348) {
+                                    return +i + "° -=- NNW";
+                            }
+                        })(data.windDir);
+
+
                         cloudiness.textContent = data.cloudiness + "%";
 
                     }, 1500);
