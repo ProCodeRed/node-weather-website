@@ -77,7 +77,7 @@ weatherForm.addEventListener('submit', (e) => {
                         cardHeader.style.display = "block"
 
                         WeatherDescription.textContent = data.description;
-                        weatherIconImg.src = "http://openweathermap.org/img/w/" + data.weatherIcon + ".png";
+                        weatherIconImg.src = "https://openweathermap.org/img/w/" + data.weatherIcon + ".png";
                         tTemperature.textContent = data.temperature;
                         msgFour.textContent = data.humidity;
                         msgFive.textContent =  data.feeltemp;
@@ -123,7 +123,7 @@ weatherForm.addEventListener('submit', (e) => {
 
 
                         WeatherDescriptions[0].textContent = data.description;
-                        WeatherDescriptions[1].src = "http://openweathermap.org/img/w/" + data.weatherIcon + ".png";
+                        WeatherDescriptions[1].src = "https://openweathermap.org/img/w/" + data.weatherIcon + ".png";
                         bTemperature.textContent = data.temperature + "°C";
                         tempFeelLike.textContent =data.feeltemp + "°C";
                         pressure.textContent = data.pressure + "hPa";
