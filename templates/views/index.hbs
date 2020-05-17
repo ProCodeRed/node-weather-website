@@ -17,22 +17,151 @@
     <div class="container">
         <div class="main-content text-center">
             <p>Use this page to get your location's weather !</p>
-            <form action="">
+            <form action="" class="locationSearchForm">
                 <input type="text" name="" id="" placeholder="Enter the location...">
                 <button>Search</button>
                 <p id="msg-1"></p>
             </form>
+            
             <div class="card text-center mt-4">
                 <div class="card-header cardHeader">
                     <div class="d-flex summery">
                        <p id="shortReport">There Will be a <span id="msg-2"></span><img id="weatherIcon-img" src="" alt="">in <span id="msg-6"></span>. Temperature will be <span id="msg-3"></span>°C and Humidity will also be <span id="msg-4"></span>% So over all Temperature may feel like <span id="msg-5"></span>°C </p>
-                       
                     </div>
                 </div>
                 <div class="card-body cardBody">
-                    <h5 class="card-title">Weather's Current Status</h5>
-                    <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                    <a href="#" class="btn btn-primary">Go somewhere</a>
+                    <h5 class="card-title">Weather report in more detail</h5>
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <div class="card h-100">
+                                <div class="card-body">
+                                    <h5 class="card-title">Topographical details</h5>
+                                    <div class="row">
+                                        <div class="col-12">
+                                            <div class="row">
+                                                <div class="col-6">Country :</div>
+                                                <div class="col-6" id="country"></div>
+                                            </div>
+                                        </div>
+                                        <div class="col-12">
+                                            <div class="row">
+                                                <div class="col-6">Time zone :</div>
+                                                <div class="col-6" id="timeZone"></div>
+                                            </div>
+                                        </div>
+                                        <div class="col-12">
+                                            <div class="row">
+                                                <div class="col-6">City Name :</div>
+                                                <div class="col-6" id="cityName"></div>
+                                            </div>
+                                        </div>
+                                        <div class="col-12">
+                                            <div class="row">
+                                                <div class="col-6">Coordinates :</div>
+                                                <div class="col-6" id="coordinates"></div>
+                                            </div>
+                                        </div>
+                                        <div class="col-12">
+                                            <div class="row">
+                                                <div class="col-6">Sun rise :</div>
+                                                <div class="col-6" id="sunRise"></div>
+                                            </div>
+                                        </div>
+                                        <div class="col-12">
+                                            <div class="row">
+                                                <div class="col-6">Sun set :</div>
+                                                <div class="col-6" id="sunSet"></div>
+                                            </div>
+                                        </div>
+                                        <div class="col-12">
+                                            <div class="row">
+                                                <div class="col-6">Data Recieved at :</div>
+                                                <div class="col-6" id="dataRecievedAt"></div>
+                                            </div>
+                                        </div>
+                                        <div class="col-12">
+                                            <div class="row">
+                                                <div class="col-6">Sea level :</div>
+                                                <div class="col-6" id="seaLevel"></div>
+                                            </div>
+                                        </div>
+                                        <div class="col-12">
+                                            <div class="row">
+                                                <div class="col-6">Ground level :</div>
+                                                <div class="col-6" id="groundLevel"></div>
+                                            </div>
+                                        </div>
+                                        
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="card h-100">
+                                <div class="card-body">
+                                    <h5 class="card-title">Meteorological details</h5>
+                                    <div class="row">
+                                        <div class="col-12">
+                                            <div class="row">
+                                                <div class="col-6">Weather description :</div>
+                                                <div class="col-6" id="weather">
+                                                    <span id="msg-2"></span><img id="weatherIcon-img" src="" alt="">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-12">
+                                            <div class="row">
+                                                <div class="col-6">Temperature :</div>
+                                                <div class="col-6" id="temperature"></div>
+                                            </div>
+                                        </div>
+                                        <div class="col-12">
+                                            <div class="row">
+                                                <div class="col-6">Temperature feels :</div>
+                                                <div class="col-6" id="tempFeelLike"></div>
+                                            </div>
+                                        </div>
+                                        <div class="col-12">
+                                            <div class="row">
+                                                <div class="col-6">Pressure :</div>
+                                                <div class="col-6" id="pressure"></div>
+                                            </div>
+                                        </div>
+                                        <div class="col-12">
+                                            <div class="row">
+                                                <div class="col-6">Humidity level :</div>
+                                                <div class="col-6" id="humidity"></div>
+                                            </div>
+                                        </div>
+                                        <div class="col-12">
+                                            <div class="row">
+                                                <div class="col-6">Wind speed:</div>
+                                                <div class="col-6" id="windSpeed"></div>
+                                            </div>
+                                        </div>
+                                        <div class="col-12">
+                                            <div class="row">
+                                                <div class="col-6">Wind direction :</div>
+                                                <div class="col-6" id="windDir"></div>
+                                            </div>
+                                        </div>
+                                        <div class="col-12">
+                                            <div class="row">
+                                                <div class="col-6"> Over all Cloudiness :</div>
+                                                <div class="col-6" id="cloudiness"></div>
+                                            </div>
+                                        </div>
+                                        {{!-- <div class="col-12">
+                                            <div class="row">
+                                                <div class="col-6">Ground level :</div>
+                                                <div class="col-6" id="groundLevel"></div>
+                                            </div>
+                                        </div> --}}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
                 {{!-- <div class="card-footer text-muted">
                     2 days ago

@@ -21,8 +21,16 @@ const forecast = (lat, lon, callback) => {
                 windDir: body.wind.deg,
                 sunRise: body.sys.sunrise,
                 sunSet: body.sys.sunset,
-                weatherId: body.weather[0].id
+                weatherId: body.weather[0].id,
+                countryname: body.sys.country,
+                latitude: body.coord.lat,
+                longitude: body.coord.lon,
+                timeZone: body.timezone,
+                dataRecieve: body.dt,
+                seaLevel : body.main.sea_level,
+                groundLevel : body.main.grnd_level
             })
+
             
         }
     })// desturcturing used here

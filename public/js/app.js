@@ -17,7 +17,20 @@ const city = document.querySelector('.title');
 const temperature = document.querySelector('.subtitle');
 const weatherIconImg = document.querySelector('#weatherIcon-img');
 
-// initial value
+// defining for Topographical details
+const[country, timeZone, cityName, coordinates, sunRise, sunSet, dataRecievedAt, seaLevel, groundLevel] = [
+    document.querySelector('#country'),
+    document.querySelector('#timeZone'),
+    document.querySelector('#cityName'),
+    document.querySelector('#coordinates'),
+    document.querySelector('#sunRise'),
+    document.querySelector('#sunSet'),
+    document.querySelector('#dataRecievedAt'),
+    document.querySelector('#seaLevel'),
+    document.querySelector('#groundLevel')
+]
+
+// initial value for cards
 card.style.display = "none";
 cardHeader.style.display = "none";
 cardBody.style.display = "none";
@@ -37,13 +50,12 @@ weatherForm.addEventListener('submit', (e) => {
                 }
                 else {
                     msgOne.textContent = data.location;
-                    msgOne.style.color = 'green';
+                    msgOne.style.cssText = "color: green; font-size: 25px"; 
+
                     setInterval(() => {
                         msgOne.style.visibility = (msgOne.style.visibility == 'hidden' ? '' : 'hidden');
                         cardHeader.style.display = "block"
                     }, 2000);
-
-                    
 
                     setInterval(() => {
                         card.style.display = "block";
@@ -57,6 +69,21 @@ weatherForm.addEventListener('submit', (e) => {
                         msgSix.textContent = data.cityName;
 
                     }, 1000);
+
+                    setInterval(() => {
+                        cardBody.style.display = "block";
+
+                        country.textContent = data.countryname;
+                        timeZone.textContent = data.timeZone;
+                        cityName.textContent = data.cityName;
+                        coordinates.textContent = "lat : " + data.latitude + ", " + "lon : " + data.longitude;
+                        sunRise.textContent = data.sunRise,
+                        sunSet.textContent = data.sunSet,
+                        dataRecievedAt.textContent = data.dataRecieve,
+                        seaLevel.textContent = data.seaLevel,
+                        groundLevel.textContent = data.groundLevel
+
+                    }, 1500);
 
 
                     console.log(data.description);               

@@ -59,7 +59,7 @@ app.get('/weather', (req, res) => {
             })
         }
 
-        forecast(latitude, longitude, (err, {cityName, temperature, description, weatherIcon, feeltemp, pressure, humidity, windSpeed, windDir, sunRise, sunSet, weatherId }) => {
+        forecast(latitude, longitude, (err, {cityName, temperature, description, weatherIcon, feeltemp, pressure, humidity, windSpeed, windDir, sunRise, sunSet, weatherId, countryname, latitude, longitude, timeZone, dataRecieve, seaLevel, groundLevel }) => {
             if(err) {
                 return res.send({
                     error: err
@@ -79,7 +79,14 @@ app.get('/weather', (req, res) => {
                 windDir : windDir,
                 sunRise : sunRise,
                 sunSet : sunSet,
-                weatherId: weatherId
+                weatherId: weatherId,
+                countryname: countryname,
+                latitude : latitude,
+                longitude: longitude,
+                timeZone: timeZone,
+                dataRecieve: dataRecieve,
+                seaLevel: seaLevel,
+                groundLevel: groundLevel
             })
         })
 
