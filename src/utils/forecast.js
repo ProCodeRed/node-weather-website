@@ -28,7 +28,8 @@ const forecast = (lat, lon, callback) => {
                 timeZone: body.timezone,
                 dataRecieve: body.dt,
                 seaLevel : body.main.sea_level,
-                groundLevel : body.main.grnd_level
+                groundLevel : body.main.grnd_level,
+                cloudiness: body.clouds.all
             })
 
             

@@ -1,9 +1,8 @@
 const weatherForm = document.querySelector('form');
 const search = document.querySelector('input');
 
-const msgOne = document.querySelector('#msg-1');
-const msgTwo = document.querySelector('#msg-2');
-const msgThree = document.querySelector('#msg-3');
+
+// const msgThree = document.querySelector('#msg-3');
 const msgFour = document.querySelector('#msg-4');
 const msgFive = document.querySelector('#msg-5');
 const msgSix = document.querySelector('#msg-6');
@@ -14,11 +13,26 @@ const cardBody = document.querySelector('.cardBody');
 
 const weatherDesc = document.getElementById('descSpan');
 const city = document.querySelector('.title');
-const temperature = document.querySelector('.subtitle');
-const weatherIconImg = document.querySelector('#weatherIcon-img');
+// const temperature = document.querySelector('.subtitle');
 
 // defining for Topographical details
-const[country, timeZone, cityName, coordinates, sunRise, sunSet, dataRecievedAt, seaLevel, groundLevel] = [
+const[msgOne, WeatherDescription, tTemperature, weatherIconImg, WeatherDescriptions, bTemperature, tempFeelLike, pressure, humidity, windSpeed, windDir, cloudiness, country, timeZone, cityName, coordinates, sunRise, sunSet, dataRecievedAt, seaLevel, groundLevel] = [
+    document.querySelector('#msg-1'),
+    document.querySelector('.WeatherDescription'),
+    document.querySelector('#tTemperature'),
+    document.querySelector('#weatherIcon-img'),
+    document.getElementById("weather").querySelectorAll(".WeatherDescription"),
+    document.querySelector('#bTemperature'),
+    document.querySelector('#tempFeelLike'),
+    document.querySelector('#pressure'),
+    document.querySelector('#humidity'),
+    document.querySelector('#windSpeed'),
+    document.querySelector('#windDir'),
+    document.querySelector('#cloudiness'),
+
+
+
+
     document.querySelector('#country'),
     document.querySelector('#timeZone'),
     document.querySelector('#cityName'),
@@ -61,9 +75,9 @@ weatherForm.addEventListener('submit', (e) => {
                         card.style.display = "block";
                         cardHeader.style.display = "block"
 
-                        msgTwo.textContent = data.description;
+                        WeatherDescription.textContent = data.description;
                         weatherIconImg.src = "http://openweathermap.org/img/w/" + data.weatherIcon + ".png";
-                        msgThree.textContent = data.temperature;
+                        tTemperature.textContent = data.temperature;
                         msgFour.textContent = data.humidity;
                         msgFive.textContent =  data.feeltemp;
                         msgSix.textContent = data.cityName;
@@ -82,6 +96,17 @@ weatherForm.addEventListener('submit', (e) => {
                         dataRecievedAt.textContent = data.dataRecieve,
                         seaLevel.textContent = data.seaLevel,
                         groundLevel.textContent = data.groundLevel
+
+
+                        WeatherDescriptions[0].textContent = data.description;
+                        WeatherDescriptions[1].src = "http://openweathermap.org/img/w/" + data.weatherIcon + ".png";
+                        bTemperature.textContent = data.temperature + "°C";
+                        tempFeelLike.textContent =data.feeltemp + "°C";
+                        pressure.textContent = data.pressure;
+                        humidity.textContent = data.humidity + "%";
+                        windSpeed.textContent = data.windSpeed;
+                        windDir.textContent = data.windDir;
+                        cloudiness.textContent = data.cloudiness + "%";
 
                     }, 1500);
 
