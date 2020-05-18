@@ -6,13 +6,49 @@
     <title>About</title>
     <link rel="icon" href="/img/weather.png">
     <link rel="stylesheet" href="/css/styles.css">
+    <link rel="stylesheet" href="/css/media.css">
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
 </head>
 <body>
-    <div class="main-content">
-        {{>header}}
-        <p>This site was created by Vipin Yadav. It uses data from mapbox.com and Openweather.com</p>
-    <img class="portrait" src="/img/thumbnail_IMG-1500.jpg" alt="me">
-    </div>
-    {{>footer}}
+    <body>
+        <section id="wrapper">
+            {{>header}}
+        <div class="overlay"></div>
+            <video playsinline="playsinline" autoplay="autoplay" muted="muted" loop="loop">
+                <source src="https://storage.googleapis.com/coverr-main/mp4/Mt_Baker.mp4" type="video/mp4">
+            </video>
+            <div class="container">
+                <div class="main-content text-center">
+                    <p>This site was created by Vipin Yadav. It uses data from mapbox.com and Openweather.com</p>
+                    <div class="row">
+                    <div class="col-sm-6">
+                        <div class="card">
+                        <div class="card-body">
+                            <img class="img-fluid" src="/img/thumbnail_IMG-1500.jpg" alt="me">
+                        </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Special title treatment</h5>
+                            <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                            <a href="#" class="btn btn-primary">Go somewhere</a>
+                        </div>
+                        </div>
+                    </div>
+                    </div>
+                </div>
+            </div>
+        <div class="conatiner-footer text-center">
+            {{>footer}}
+        </div>
+        </section>
+    <script src="/js/app.js"></script>
+    {{!-- <script src="/js/jquery.slim.min.js"></script> --}}
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="/js/bootstrap.bundle.min.js"></script>
+</body>
 </body>
 </html>

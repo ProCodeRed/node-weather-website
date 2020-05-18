@@ -8,8 +8,6 @@
     <link rel="stylesheet" href="/css/styles.css">
     <link rel="stylesheet" href="/css/media.css">
     <link rel="stylesheet" href="/css/bootstrap.min.css">
-    {{!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script> --}}
-    {{!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> --}}
     <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
 </head>
 <body>
@@ -19,168 +17,166 @@
         <video playsinline="playsinline" autoplay="autoplay" muted="muted" loop="loop">
             <source src="https://storage.googleapis.com/coverr-main/mp4/Mt_Baker.mp4" type="video/mp4">
         </video>
-            <div class="container">
-        <div class="main-content text-center">
-            <div class="d-flex h-100 text-center align-items-center">
-                <div class="w-100 text-white">
-                    <h1 class="display-5" style="color: cyan;">The Weather Reporter</h1>
-                    <p class="lead mb-0">This Reporter will Provide you best weather information</p>
-                    <p>Use this page to get your location's weather !</p>
-                    <form action="" class="locationSearchForm">
-                        <input type="text" name="" id="" placeholder="Enter the location...">
-                        <button>Search</button>
-                        <p id="msg-1"></p>
-                    </form>
-                </div>
-            </div>
-            
-            
-            <div class="card text-center mt-4">
-                <div class="card-header cardHeader">
-                    <div class="summery">
-                        <h5 class="card-title">Weather report in brief</h5>
-                       <p id="shortReport">There Will be a <span class="WeatherDescription"></span><img id="weatherIcon-img" src="" alt="">in <span id="msg-6"></span>. Temperature will be <span id="tTemperature"></span>°C and Humidity will be <span id="msg-4"></span>% So over all Temperature may feel like <span id="msg-5"></span>°C </p>
-                    </div>
-                </div>
-                <div class="card-body cardBody">
-                    <h5 class="card-title">Weather report in more detail</h5>
-                    <div class="row">
-                        <div class="col-md-6">
-                            <div class="card h-100">
-                                <div class="card-body">
-                                    <h5 class="card-title">Topographical details</h5>
-                                    <div class="row">
-                                        <div class="col-12">
-                                            <div class="row markerBorder align-items-center">
-                                                <div class="col-6  px-0 marker">Country :</div>
-                                                <div class="col-6  px-0 marker-data" id="country"></div>
-                                            </div>
-                                        </div>
-                                        <div class="col-12">
-                                            <div class="row markerBorder align-items-center">
-                                                <div class="col-6  px-0 marker">Time zone :</div>
-                                                <div class="col-6  px-0 marker-data" id="timeZone"></div>
-                                            </div>
-                                        </div>
-                                        <div class="col-12">
-                                            <div class="row markerBorder align-items-center">
-                                                <div class="col-6  px-0 marker">City Name :</div>
-                                                <div class="col-6  px-0 marker-data" id="cityName"></div>
-                                            </div>
-                                        </div>
-                                        <div class="col-12">
-                                            <div class="row markerBorder align-items-center">
-                                                <div class="col-6  px-0 marker">Coordinates :</div>
-                                                <div class="col-6  px-0 marker-data" id="coordinates"></div>
-                                            </div>
-                                        </div>
-                                        <div class="col-12">
-                                            <div class="row markerBorder align-items-center">
-                                                <div class="col-6  px-0 marker">Sun rise :</div>
-                                                <div class="col-6  px-0 marker-data" id="sunRise"></div>
-                                            </div>
-                                        </div>
-                                        <div class="col-12">
-                                            <div class="row markerBorder align-items-center">
-                                                <div class="col-6  px-0 marker">Sun set :</div>
-                                                <div class="col-6  px-0 marker-data" id="sunSet"></div>
-                                            </div>
-                                        </div>
-                                        <div class="col-12">
-                                            <div class="row markerBorder align-items-center">
-                                                <div class="col-6  px-0 marker">Data Recieved:</div>
-                                                <div class="col-6  px-0 marker-data" id="dataRecievedAt"></div>
-                                            </div>
-                                        </div>
-                                        <div class="col-12">
-                                            <div class="row markerBorder align-items-center">
-                                                <div class="col-6  px-0 marker">Sea level pressure:</div>
-                                                <div class="col-6  px-0 marker-data" id="seaLevel"></div>
-                                            </div>
-                                        </div>
-                                        <div class="col-12">
-                                            <div class="row markerBorder align-items-center">
-                                                <div class="col-6  px-0 marker">Ground level pressure:</div>
-                                                <div class="col-6  px-0 marker-data" id="groundLevel"></div>
-                                            </div>
-                                        </div>
-                                        
-                                    </div>
-                                </div>
+        <div class="container">
+            <div class="main-content text-center">
+                    <div class="d-flex h-100 text-center align-items-center">
+                        <div class="w-100 text-white">
+                            <h1 class="display-5" style="color: cyan;">The Weather Reporter</h1>
+                            <p class="lead mb-0">This Reporter will Provide you best weather information</p>
+                            <p>Use this page to get your location's weather !</p>
+                            <form action="" class="locationSearchForm">
+                                <input type="text" name="" id="" placeholder="Enter the location...">
+                                <button>Search</button>
+                                <p id="msg-1"></p>
+                            </form>
+                        </div>
+                    </div>     
+                    <div class="card text-center mt-4">
+                        <div class="card-header cardHeader">
+                            <div class="summery">
+                                <h5 class="card-title">Weather report in brief</h5>
+                            <p id="shortReport">There Will be a <span class="WeatherDescription"></span><img id="weatherIcon-img" src="" alt="">in <span id="msg-6"></span>. Temperature will be <span id="tTemperature"></span>°C and Humidity will be <span id="msg-4"></span>% So over all Temperature may feel like <span id="msg-5"></span>°C </p>
                             </div>
                         </div>
-                        <div class="col-md-6 mt-4 mt-md-0">
-                            <div class="card h-100">
-                                <div class="card-body">
-                                    <h5 class="card-title">Meteorological details</h5>
-                                    <div class="row">
-                                        <div class="col-12">
-                                            <div class="row markerBorder align-items-center">
-                                                <div class="col-6  px-0 marker">Weather description :</div>
-                                                <div class="col-6  px-0 marker-data" id="weather">
-                                                    <span class="WeatherDescription"></span>
-                                                    <img class="WeatherDescription" src="" alt="" style="height: 30px;">
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-12">
-                                            <div class="row markerBorder align-items-center">
-                                                <div class="col-6  px-0 marker">Temperature :</div>
-                                                <div class="col-6  px-0 marker-data" id="bTemperature"></div>
-                                            </div>
-                                        </div>
-                                        <div class="col-12">
-                                            <div class="row markerBorder align-items-center">
-                                                <div class="col-6  px-0 marker">Temperature feels :</div>
-                                                <div class="col-6  px-0 marker-data" id="tempFeelLike"></div>
-                                            </div>
-                                        </div>
-                                        <div class="col-12">
-                                            <div class="row markerBorder align-items-center">
-                                                <div class="col-6  px-0 marker">Pressure :</div>
-                                                <div class="col-6  px-0 marker-data" id="pressure"></div>
-                                            </div>
-                                        </div>
-                                        <div class="col-12">
-                                            <div class="row markerBorder align-items-center">
-                                                <div class="col-6  px-0 marker">Humidity level :</div>
-                                                <div class="col-6  px-0 marker-data" id="humidity"></div>
-                                            </div>
-                                        </div>
-                                        <div class="col-12">
-                                            <div class="row markerBorder align-items-center">
-                                                <div class="col-6  px-0 marker">Wind speed:</div>
-                                                <div class="col-6  px-0 marker-data" id="windSpeed"></div>
-                                            </div>
-                                        </div>
-                                        <div class="col-12">
-                                            <div class="row markerBorder align-items-center">
-                                                <div class="col-6  px-0 marker">Wind direction :</div>
-                                                <div class="col-6  px-0 marker-data" id="windDir"></div>
-                                            </div>
-                                        </div>
-                                        <div class="col-12">
-                                            <div class="row markerBorder align-items-center">
-                                                <div class="col-6  px-0 marker"> Over all Cloudiness :</div>
-                                                <div class="col-6  px-0 marker-data" id="cloudiness"></div>
-                                            </div>
-                                        </div>
-                                        {{!-- <div class="col-12">
+                        <div class="card-body cardBody">
+                            <h5 class="card-title">Weather report in more detail</h5>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="card h-100">
+                                        <div class="card-body">
+                                            <h5 class="card-title">Topographical details</h5>
                                             <div class="row">
-                                                <div class="col-6">Ground level :</div>
-                                                <div class="col-6" id="groundLevel"></div>
+                                                <div class="col-12">
+                                                    <div class="row markerBorder align-items-center">
+                                                        <div class="col-6  px-0 marker">Country :</div>
+                                                        <div class="col-6  px-0 marker-data" id="country"></div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-12">
+                                                    <div class="row markerBorder align-items-center">
+                                                        <div class="col-6  px-0 marker">Time zone :</div>
+                                                        <div class="col-6  px-0 marker-data" id="timeZone"></div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-12">
+                                                    <div class="row markerBorder align-items-center">
+                                                        <div class="col-6  px-0 marker">City Name :</div>
+                                                        <div class="col-6  px-0 marker-data" id="cityName"></div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-12">
+                                                    <div class="row markerBorder align-items-center">
+                                                        <div class="col-6  px-0 marker">Coordinates :</div>
+                                                        <div class="col-6  px-0 marker-data" id="coordinates"></div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-12">
+                                                    <div class="row markerBorder align-items-center">
+                                                        <div class="col-6  px-0 marker">Sun rise :</div>
+                                                        <div class="col-6  px-0 marker-data" id="sunRise"></div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-12">
+                                                    <div class="row markerBorder align-items-center">
+                                                        <div class="col-6  px-0 marker">Sun set :</div>
+                                                        <div class="col-6  px-0 marker-data" id="sunSet"></div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-12">
+                                                    <div class="row markerBorder align-items-center">
+                                                        <div class="col-6  px-0 marker">Data Recieved:</div>
+                                                        <div class="col-6  px-0 marker-data" id="dataRecievedAt"></div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-12">
+                                                    <div class="row markerBorder align-items-center">
+                                                        <div class="col-6  px-0 marker">Sea level pressure:</div>
+                                                        <div class="col-6  px-0 marker-data" id="seaLevel"></div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-12">
+                                                    <div class="row markerBorder align-items-center">
+                                                        <div class="col-6  px-0 marker">Ground level pressure:</div>
+                                                        <div class="col-6  px-0 marker-data" id="groundLevel"></div>
+                                                    </div>
+                                                </div>
+                                                
                                             </div>
-                                        </div> --}}
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6 mt-4 mt-md-0">
+                                    <div class="card h-100">
+                                        <div class="card-body">
+                                            <h5 class="card-title">Meteorological details</h5>
+                                            <div class="row">
+                                                <div class="col-12">
+                                                    <div class="row markerBorder align-items-center">
+                                                        <div class="col-6  px-0 marker">Weather description :</div>
+                                                        <div class="col-6  px-0 marker-data" id="weather">
+                                                            <span class="WeatherDescription"></span>
+                                                            <img class="WeatherDescription" src="" alt="" style="height: 30px;">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-12">
+                                                    <div class="row markerBorder align-items-center">
+                                                        <div class="col-6  px-0 marker">Temperature :</div>
+                                                        <div class="col-6  px-0 marker-data" id="bTemperature"></div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-12">
+                                                    <div class="row markerBorder align-items-center">
+                                                        <div class="col-6  px-0 marker">Temperature feels :</div>
+                                                        <div class="col-6  px-0 marker-data" id="tempFeelLike"></div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-12">
+                                                    <div class="row markerBorder align-items-center">
+                                                        <div class="col-6  px-0 marker">Pressure :</div>
+                                                        <div class="col-6  px-0 marker-data" id="pressure"></div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-12">
+                                                    <div class="row markerBorder align-items-center">
+                                                        <div class="col-6  px-0 marker">Humidity level :</div>
+                                                        <div class="col-6  px-0 marker-data" id="humidity"></div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-12">
+                                                    <div class="row markerBorder align-items-center">
+                                                        <div class="col-6  px-0 marker">Wind speed:</div>
+                                                        <div class="col-6  px-0 marker-data" id="windSpeed"></div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-12">
+                                                    <div class="row markerBorder align-items-center">
+                                                        <div class="col-6  px-0 marker">Wind direction :</div>
+                                                        <div class="col-6  px-0 marker-data" id="windDir"></div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-12">
+                                                    <div class="row markerBorder align-items-center">
+                                                        <div class="col-6  px-0 marker"> Over all Cloudiness :</div>
+                                                        <div class="col-6  px-0 marker-data" id="cloudiness"></div>
+                                                    </div>
+                                                </div>
+                                                {{!-- <div class="col-12">
+                                                    <div class="row">
+                                                        <div class="col-6">Ground level :</div>
+                                                        <div class="col-6" id="groundLevel"></div>
+                                                    </div>
+                                                </div> --}}
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
+                        {{!-- <div class="card-footer text-muted">
+                            2 days ago
+                        </div> --}}
                     </div>
-                </div>
-                {{!-- <div class="card-footer text-muted">
-                    2 days ago
-                </div> --}}
-            </div>
         </div>
     </div>
     <div class="conatiner-footer text-center">
