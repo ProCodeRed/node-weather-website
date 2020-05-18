@@ -1,8 +1,6 @@
 const weatherForm = document.querySelector('form');
 const search = document.querySelector('input');
 
-
-// const msgThree = document.querySelector('#msg-3');
 const msgFour = document.querySelector('#msg-4');
 const msgFive = document.querySelector('#msg-5');
 const msgSix = document.querySelector('#msg-6');
@@ -11,11 +9,9 @@ const card = document.querySelector('.card');
 const cardHeader = document.querySelector('.cardHeader');
 const cardBody = document.querySelector('.cardBody');
 
-const weatherDesc = document.getElementById('descSpan');
-const city = document.querySelector('.title');
-// const temperature = document.querySelector('.subtitle');
+// const weatherDesc = document.getElementById('descSpan');
+// const city = document.querySelector('.title');
 
-// defining for Topographical details
 const[msgOne, WeatherDescription, tTemperature, weatherIconImg, WeatherDescriptions, bTemperature, tempFeelLike, pressure, humidity, windSpeed, windDir, cloudiness, country, timeZone, cityName, coordinates, sunRise, sunSet, dataRecievedAt, seaLevel, groundLevel] = [
     document.querySelector('#msg-1'),
     document.querySelector('.WeatherDescription'),
@@ -62,17 +58,19 @@ weatherForm.addEventListener('submit', (e) => {
             res.json().then((data) => {
                 if(data.error) {
                     msgOne.textContent = data.error;
+                    search.style.cssText = "border: 3px solid red"
                 }
                 else {
                     msgOne.textContent = data.location;
-                    msgOne.style.cssText = "color: green; font-size: 25px"; 
+                    msgOne.style.cssText = "color: #fff; font-size: 18px"; 
+                    search.style.cssText = "border: 3px solid lawngreen"
 
                     setInterval(() => {
                         msgOne.style.visibility = (msgOne.style.visibility == 'hidden' ? '' : 'hidden');
                         cardHeader.style.display = "block"
                     }, 2000);
-
-                    setInterval(() => {
+                
+                        // Weather in brief
                         card.style.display = "block";
                         cardHeader.style.display = "block"
 
@@ -83,10 +81,8 @@ weatherForm.addEventListener('submit', (e) => {
                         msgFive.textContent =  data.feeltemp;
                         msgSix.textContent = data.cityName;
 
-                    }, 1000);
-
-                    setInterval(() => {
-                        cardBody.style.display = "block";
+                    // weather in deatils
+                    cardBody.style.display = "block";
 
                         country.textContent = data.countryname;
                         timeZone.textContent = data.timeZone; 
@@ -170,7 +166,6 @@ weatherForm.addEventListener('submit', (e) => {
 
                         cloudiness.textContent = data.cloudiness + "%";
 
-                    }, 1500);
 
 
                     console.log(data.description);               
@@ -182,3 +177,45 @@ weatherForm.addEventListener('submit', (e) => {
         }) // fetch api used
 
 })
+
+
+
+
+
+// When the user scrolls the page, execute myFunction
+window.onscroll = function() {myFunction()};
+
+function myFunction() {
+  var winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+  var height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+  var scrolled = (winScroll / height) * 100;
+  document.getElementById("myBar").style.width = scrolled + "%";
+}
+
+
+// for header scroll
+$(window).scroll(function() {
+        if ($(this).scrollTop() > 80){
+        $('header').addClass('sticky');
+        $('.navbar-brand').addClass('sticky-nav-brand ');
+        $('.nav-link').addClass('sticky-nav-link ');
+        $('.bar1').addClass('bar1-black');
+        $('.bar2').addClass('bar2-black');
+        $('.bar3').addClass('bar3-black');
+
+        }
+        else{
+        $('header').removeClass('sticky');
+        $('.navbar-brand').removeClass('sticky-nav-brand ');
+        $('.nav-link').removeClass('sticky-nav-link ');
+        $('.bar1').removeClass('bar1-black');
+        $('.bar2').removeClass('bar2-black');
+        $('.bar3').removeClass('bar3-black');
+        }
+  });
+
+
+  //menu icon js
+  function myFunction(x) {
+        x.classList.toggle("change");
+      }

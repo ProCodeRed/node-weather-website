@@ -1,14 +1,47 @@
 
-
-
 header {
-    position: relative;
-    background-color: transparent;
-    height: 50vh;
-    /* min-height: 25rem; */
+    position: fixed;
     width: 100%;
-    overflow: hidden;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 6;
+    transition: all .3s;
 }
+
+.sticky {
+    font-size: 18px;
+    color: #000000;
+    background-color: rgba(255, 255, 255, 0.5);
+    position: fixed;
+    width: 100%;
+    transition: all 0.4s ease;
+}
+
+.sticky-nav-brand {
+     color: red !important;
+}
+
+.sticky-nav-link{
+    color: #000 !important;
+}
+
+
+/* The progress container (grey background) */
+.progress-container {
+    width: 100%;
+    height: 3px;
+    background: unset;
+  }
+  
+  /* The progress bar (scroll indicator) */
+  .progress-bar {
+    height: 3px;
+    background: red;
+    width: 0%;
+  }
+
+
 
 header a.navbar-brand{
     font-size: 28px;
@@ -44,13 +77,52 @@ header .overlay {
     z-index: 1;
 }
 
-@media (pointer: coarse) and (hover: none) {
+/* @media (pointer: coarse) and (hover: none) {
     header {
     background: url('https://source.unsplash.com/XT5OInaElMw/1600x900') black no-repeat center center scroll;
     }
     header video {
     display: none;
     }
+} */
+
+
+
+/* menu icon css.... */
+.container-menu {
+    display: inline-block;
+    cursor: pointer;
+  }
+  
+  .bar1, .bar2, .bar3{
+    width: 35px;
+    height: 5px;
+    background-color: #fff;
+    margin: 6px 0;
+    transition: 0.4s;
+  }
+  .bar1-black, .bar2-black, .bar3-black{
+    width: 35px;
+    height: 5px;
+    background-color: #000;
+    margin: 6px 0;
+    transition: 0.4s;
+  }
+  .change .bar1, .change .bar1-black {
+    -webkit-transform: rotate(-45deg) translate(-9px, 6px);
+    transform: rotate(-45deg) translate(-9px, 6px);
+  }
+  
+  .change .bar2, .change .bar2-black {opacity: 0;}
+  
+  .change .bar3, .change .bar3-black{
+    -webkit-transform: rotate(45deg) translate(-8px, -8px);
+    transform: rotate(45deg) translate(-8px, -8px);
+  }
+
+  .navbar-toggler, .navbar-toggler:hover, .navbar-toggler:focus{
+    border: none !important;
+    outline: none !important;
 }
 
 
@@ -59,14 +131,21 @@ header .overlay {
 .main-content{
     position: relative;
     z-index: 1;
-    min-height: 100vh;
+    min-height: 96vh;
+    padding: 160px 0 120px;
+}
+
+section#wrapper{
+    background: rgba(0, 0, 0, 0.5);
+    color: #fff;
 }
 
 .locationSearchForm input{
     background: unset;
-    border: 1px solid rgb(0, 0, 0, .8);
+    border: 3px solid rgba(124, 252, 0, 0.8);
     border-radius: .25rem;
     padding: 5px 10px;
+    color: lawngreen;
 }
 
 .locationSearchForm input:focus, .locationSearchForm button:focus{
@@ -76,16 +155,39 @@ header .overlay {
 
 .locationSearchForm button{
     background: unset;
-    border: 1px solid rgb(0, 0, 0, .8);
+    border: 3px solid rgba(124, 252, 0, 0.8);
     border-radius: .25rem;
     padding: 5px 10px;
+    color: lawngreen;
 }
 
 p#msg-1{ color: red; font-size: 12px;}
 
 .card{
-    background: unset;
+    background: rgb(95, 158, 160, .8);
+
 }
+
+.marker {
+    color: #000;
+    font-size: 16px;
+    text-shadow: 4px 4px 2px rgba(77, 75, 75, 0.6);
+}
+
+.marker-data{
+    font-size: 16px;
+}
+
+.markerBorder {
+    border-bottom: 1px solid;
+    padding: 10px 0px;
+}
+.card-title {
+    margin-bottom: .75rem;
+    color: gold;
+    font-weight: 900;
+}
+
 
 
 
