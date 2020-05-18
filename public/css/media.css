@@ -40,4 +40,10 @@
     .card-title{
         font-size: 18px !important;
     }
+    .nav-link{
+        padding: .1rem 1rem !important;
+    }
+    .navbar-nav{
+        flex-direction: row !important;
+    }
 }

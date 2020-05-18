@@ -183,7 +183,6 @@ weatherForm.addEventListener('submit', (e) => {
 
 
 // When the user scrolls the page, execute myFunction
-window.onscroll = function() {myFunction()};
 
 function myFunction() {
   var winScroll = document.body.scrollTop || document.documentElement.scrollTop;
