@@ -24,7 +24,17 @@
     .card-title{
         font-size: 18px !important;
     }
+    .nav-link{
+        padding: .1rem .3rem !important;
+        font-size: 15px;
+    }
     
+}
+
+@media (min-width: 576px)and (max-width: 991.98px){
+    .nav-link{
+        padding: .1rem 1rem !important;
+    }
 }
 
 @media (max-width: 767.98px) {
@@ -39,9 +49,6 @@
     }
     .card-title{
         font-size: 18px !important;
-    }
-    .nav-link{
-        padding: .1rem 1rem !important;
     }
     .navbar-nav{
         flex-direction: row !important;
