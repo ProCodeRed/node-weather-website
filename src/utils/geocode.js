@@ -17,5 +17,4 @@ const geoCode = (address, callback) => {
         }
     })// desturcturing used here
 }
-
 module.exports = geoCode;

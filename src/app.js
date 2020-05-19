@@ -9,6 +9,7 @@ const port = process.env.PORT || 3000; // port configuration for locally and her
 
 // define paths for express config
 app.use(express.static(path.join(__dirname,'../public')));
+app.use(express.json({ limit: '1mb'}));
 const viewsPath = path.join(__dirname,'../templates/views');
 const partialsPath = path.join(__dirname, '../templates/partials');
 
@@ -93,6 +94,8 @@ app.get('/weather', (req, res) => {
 
     })
 })
+
+
 
 
 // for specific 404 pages in specfic Routes

@@ -9,8 +9,6 @@ const card = document.querySelector('.card');
 const cardHeader = document.querySelector('.cardHeader');
 const cardBody = document.querySelector('.cardBody');
 
-// const weatherDesc = document.getElementById('descSpan');
-// const city = document.querySelector('.title');
 
 const[msgOne, WeatherDescription, tTemperature, weatherIconImg, WeatherDescriptions, bTemperature, tempFeelLike, pressure, humidity, windSpeed, windDir, cloudiness, country, timeZone, cityName, coordinates, sunRise, sunSet, dataRecievedAt, seaLevel, groundLevel] = [
     document.querySelector('#msg-1'),
@@ -53,6 +51,7 @@ weatherForm.addEventListener('submit', (e) => {
 
     const location = search.value; // getting value from input user provided
     msgOne.textContent = 'Loading Please wait ...';
+      
 
         fetch('/weather?address=' + location ).then((res) => {
             res.json().then((data) => {
@@ -177,6 +176,7 @@ weatherForm.addEventListener('submit', (e) => {
         }) // fetch api used
 
 })
+
 
 
 

@@ -10,7 +10,6 @@
     <link rel="stylesheet" href="/css/bootstrap.min.css">
     <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
 </head>
-<body>
     <body>
         <section id="wrapper">
             {{>header}}
@@ -21,23 +20,25 @@
             <div class="container">
                 <div class="main-content text-center">
                     <p>This site was created by Vipin Yadav. It uses data from mapbox.com and Openweather.com</p>
-                    <div class="row">
-                    <div class="col-sm-6">
-                        <div class="card">
-                        <div class="card-body">
-                            <img class="img-fluid" src="/img/thumbnail_IMG-1500.jpg" alt="me">
+                    <div class="card mb-3">
+                        <div class="row no-gutters">
+                            <div class="col-md-4 p-3">
+                            <img src="/img/thumbnail_IMG-1500.jpg" class="card-img" alt="...">
+                            </div>
+                            <div class="col-md-8">
+                                <div class="card-body">
+                                    <h5 class="card-title">About Developer</h5>
+                                    <p class="card-text">I am highly innovative and self-motivated programmer. I like coding which makes me feel good cause it keeps me  fully ocuppied and also want to extend my boundaries to be more productive with new visions.</p>
+                                    <h5 class="card-title text-body">Want to contact me !! details are given below:</h5>
+                                    <p class="card-text">
+                                        <span>Cell no :</span> <span><a class="text-danger" href="tel:+918368186518" class="tele">+91-8368186518</a></span>
+                                        <p>
+                                            <span>Email me: </span> <span><a class="text-warning" href="mailto:vipinyadav1305@hotmail.com">vipinyadav1305@hotmail.com</a></span>
+                                        </p>
+                                    </p>
+                                </div>
+                            </div>
                         </div>
-                        </div>
-                    </div>
-                    <div class="col-sm-6">
-                        <div class="card">
-                        <div class="card-body">
-                            <h5 class="card-title">Special title treatment</h5>
-                            <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                            <a href="#" class="btn btn-primary">Go somewhere</a>
-                        </div>
-                        </div>
-                    </div>
                     </div>
                 </div>
             </div>
@@ -45,10 +46,8 @@
             {{>footer}}
         </div>
         </section>
-    <script src="/js/app.js"></script>
-    {{!-- <script src="/js/jquery.slim.min.js"></script> --}}
+   <script src="/js/app.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
 <script src="/js/bootstrap.bundle.min.js"></script>
-</body>
 </body>
 </html>
